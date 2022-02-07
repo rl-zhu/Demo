@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-color: #45805488;
 }
+
 .frame {
     margin: 100px auto;
     width: 700px;
@@ -29,15 +29,13 @@ body {
     width: 5%; 
     margin-left: 20px;
     border: 5px solid transparent;
-    border-bottom: 10px solid  #ffa784;   
+    border-bottom: 10px solid  #ffa784;
 }
 
 .button {
-    /* height: 40px; */
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    column-gap: 4px;   
-    
+    column-gap: 4px;      
 }
 
 .button div {
@@ -47,9 +45,9 @@ body {
     border-radius: 8px;
     box-shadow: inset 0 0 10px 5px rgba(255, 255, 255, 0.534);
 }
+
 .text div {
     height: 95%;
-
     border-radius: 8px;
     box-shadow: inset 0 0 10px 5px rgba(255, 255, 255, 0.534);
     background-color: #ffa784;
@@ -60,12 +58,12 @@ body {
     margin-top: 8px;
     text-indent:20px;
     font-size: 17;
-
 }
 
 .red {
     background-color: #ffa784;
 }
+
 .blue {
     background-color:#b5c5c4;
 }
