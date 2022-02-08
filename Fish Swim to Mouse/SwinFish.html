@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Love Mouse</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 100vh;
+            background: linear-gradient(200deg, #fff, rgb(115, 126, 184), rgb(25, 93, 156));
+        }
+        #fish, #fish img {
+            width: 40px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fish">
+        <img src="./img.png">
+    </div>
+    <script>
+
+        let fish = document.getElementById('fish');
+        //    fish's transform degree
+        let deg = 0;
+        // fish's relative coordinates to the mouse when move event
+        let mx = 0, my = 0;
+        // coordinates changes when fish is moving to the mouse
+        let vx = 0, vy = 0;
+        let count = 0;
+        window.addEventListener('mousemove', (e) => {          
+            // The distance from the center of the fish to the position of the mousu
+            //  = the position of the mouse - fish.offsetLeft - fish's width
+            mx = e.x - fish.offsetLeft - fish.clientWidth / 2;
+            my = e.y - fish.offsetTop - fish.clientHeight / 2;
+            deg = 360 * Math.atan(my/mx) / (2 * Math.PI);
+            count = 0;
+            if(mx<0){
+                deg+=180;
+            }
+        })
+        setInterval(()=>{
+            fish.style.transform = 'rotate(' + deg + 'deg)';
+            // divide the vx into 50 pieces and move
+            if (count < 50) {
+                vx += mx / 50;
+                vy += my / 50;
+            }
+            fish.style.left = vx + 'px';
+            fish.style.top = vy + 'px';
+            count++;
+
+        }, 10)
+    </script>
+</body>
+
+</html>
