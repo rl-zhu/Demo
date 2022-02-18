@@ -1,0 +1,136 @@
+.second.Page {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center ;
+}
+
+
+/* display responsive */
+@media screen and (max-width: 800px) {
+    .second .card {      
+       min-width: 50px;  
+    } 
+}
+@media screen and (min-width: 801px) {
+    .second .card {      
+        grid-template-columns:1fr 1fr 1fr;   
+    }   
+}
+
+
+.second .card {
+    display: grid;  
+    margin-top: 20vh; 
+}
+
+.content {
+    max-height: 400px;
+    display: inline-block;
+    display: grid;
+    align-items: center;
+    margin: 0 10%;
+    column-gap: 20px;  
+}
+
+.second .info {
+    background: rgba(95, 41, 41, 0.185);
+    transition: ease-in-out;   
+}
+
+body{
+    background: url(./Snow.jpeg) no-repeat center center fixed;
+    background-size:cover;
+}
+
+
+.left {
+    border-radius: 10%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+}
+
+.left::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    box-shadow: inset 0 0 25px 10px #fff;
+}
+
+
+
+.second .card .info{
+    text-align:center;
+    padding: 20px 20px;
+    display: inline-block;
+    position: relative;
+    line-height:20px;
+    width:280px;
+    height:280px;
+    background-color: rgba(245, 242, 238, 0.336);
+    margin: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(0, 0, 0, 0.144);
+    border-left: 1px solid rgba(0, 0, 0, 0.185);
+    box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.11);
+    transition: width 0.5s, height 0.5s;
+}
+
+.second .card .info{
+    position: relative;
+    overflow: hidden;
+    
+}
+.second .card .info h2 {
+    margin: 10px 5px;
+    transform: translate(0,90px);
+    font-size: 50px;
+    transition: transform 0.8s;
+}
+.second .card .info:hover{
+    width:310px;
+    height:310px;
+    text-align:left;
+}
+
+/* when the mouse move through the box, the text will show  */
+.second .card .info:hover h2 {
+    transform: translate(0,20px);
+    font-size: 30px;
+}
+
+.second .card .info h3 {
+    margin: 5px 5px;
+    transform: translate(0,130px);
+    font-size: 30px;
+    transition: transform 0.8s, text-align 0.8s;
+    line-height: 26px;
+}
+.second .card .info:hover h3 {
+    transform: translate(0,30px);
+    font-size: 20px;
+}
+
+.second .card .info p {
+    margin: 5px 5px;
+    visibility:hidden;
+    transform: translate(0,250px);
+    transition: transform 0.8s, text-align 0.8s;
+ 
+} 
+.second .card .info:hover p {
+    transform: translate(0,40px);
+    visibility:visible;
+}
+
+.second .card a {
+    text-decoration:none;
+    color: black;
+}
+
